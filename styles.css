@@ -1,0 +1,148 @@
+:root {
+    --bg-color: #f6f6ef;
+    --text-color: #222;
+    --link-color: #444;
+    --link-hover-color: #000;
+    --border-color: #ddd;
+    --header-bg: #ff6600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--header-bg);
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+}
+
+header h1 {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.post:last-child {
+    border-bottom: none;
+}
+
+.post h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.post h3 a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.post h3 a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+.post time {
+    font-size: 0.8rem;
+    color: #666;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.post p {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+#about {
+    margin-top: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.1rem;
+    }
+    
+    nav {
+        gap: 15px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #e0e0e0;
+        --link-color: #b4b4b4;
+        --link-hover-color: #ffffff;
+        --border-color: #333;
+    }
+
+    #about {
+        background: #242424;
+    }
+}
