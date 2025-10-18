@@ -22,3 +22,10 @@ function addPost(title, date, description) {
     
     postList.insertBefore(article, postList.firstChild);
 }
+
+// Resume: open in a new tab
+const resumeLink = document.getElementById('resume-link');
+if (resumeLink) {
+    resumeLink.setAttribute('target', '_blank');
+    resumeLink.setAttribute('rel', 'noopener');
+}

@@ -12,16 +12,23 @@
 <body>
     <div class="container">
         <header>
-            <h1>Ezekiel Mitchell</h1>
-            <nav>
-                <a href="#posts">Posts</a>
-                <a href="#about">About</a>
-                <a href="https://github.com/ezekielamitchell" target="_blank">GitHub</a>
-            </nav>
+            <div class="header-left">
+                <div class="title-row">
+                    <h1><a href="/">Ezekiel A. Mitchell</a></h1>
+                    <span class="sep">|</span>
+                    <span class="site-tag">founder - <a href="https://www.endr.us" target="_blank" rel="noopener">endr</a></span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#posts">Thoughts</a>
+                    <a href="#projects">Projects</a>
+                    <a href="https://github.com/ezekielamitchell" target="_blank" rel="noopener">GitHub</a>
+                    <a href="Ezekiel_Mitchell_resume.pdf" id="resume-link">Resume</a>
+                </nav>
+            </div>
         </header>
 
         <section id="posts">
-            <h2>Latest Posts</h2>
+            <h2>Thoughts</h2>
             <div class="post-list">
                 <!-- Posts will be dynamically added here -->
                 <article class="post">
@@ -32,10 +39,46 @@
             </div>
         </section>
 
-        <section id="about">
-            <h2>About</h2>
-            <p>Welcome to my corner of the internet. I write about [your interests/focus areas].</p>
-        </section>
+
+    <section id="projects">
+        <h2>Current Projects</h2>
+        <div class="post-list">
+            <article class="post">
+                <h3><a href="#atlas">Project Atlas</a></h3>
+                <p>Building a real-time data visualization platform for environmental research.</p>
+            </article>
+            <article class="post">
+                <h3><a href="#opensource">Open Source Contributions</a></h3>
+                <p>Active in several JavaScript and Python communities.</p>
+            </article>
+            <article class="post">
+                <h3><a href="#blog">Personal Blog</a></h3>
+                <p>Writing about web performance, automation, and creative coding.</p>
+            </article>
+            <article class="post">
+                <h3><a href="#consulting">Consulting</a></h3>
+                <p>Helping startups architect scalable cloud solutions.</p>
+            </article>
+        </div>
+    </section>
+    
+    <section id="past">
+        <h2>Past Projects</h2>
+        <div class="post-list">
+            <article class="post">
+                <h3><a href="#company1">ACME Corp — Senior Engineer</a></h3>
+                <p>Led platform and API development, scaling services to handle high throughput.</p>
+            </article>
+            <article class="post">
+                <h3><a href="#company2">DataLab — Staff Developer</a></h3>
+                <p>Worked on data pipelines and visualization tooling for research teams.</p>
+            </article>
+            <article class="post">
+                <h3><a href="#company3">StartupX — Engineer</a></h3>
+                <p>Built product features and shipped multiple releases in an agile team.</p>
+            </article>
+        </div>
+    </section>
     </div>
 
     <script src="main.js"></script>
