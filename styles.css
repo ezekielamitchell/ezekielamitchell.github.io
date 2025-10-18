@@ -2,21 +2,35 @@
     color: var(--header-bg);
 }
 /* About Popup Styles */
-.about-popup {
+.about-popup-backdrop {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #222;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-popup {
+    background: rgba(40, 40, 40, 0.95);
     border-radius: 10px;
-    z-index: 1001;
+    border: 1px solid rgba(255, 102, 0, 0.2);
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 10001;
     min-width: 400px;
     max-width: 98vw;
     width: 480px;
-    padding: 40px 32px 32px 32px;
+    padding: 30px 28px 28px 28px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
 }
 
 .about-content h2 {
@@ -27,9 +41,10 @@
 }
 
 .about-content p {
-    font-size: 1.08rem;
+    font-size: 0.92rem;
     color: #e0e0e0;
-    margin-top: 12px;
+    margin-top: 0;
+    line-height: 1.5;
 }
 
 .about-close {
@@ -80,8 +95,8 @@ body {
 
 header {
     background-color: var(--header-bg);
-    padding: 8px 15px; /* reduced from 10px 20px */
-    margin-bottom: 22px; /* reduced from 30px */
+    padding: 8px 15px;
+    margin-bottom: 16px;
     border-radius: 4px;
 }
 
@@ -178,8 +193,8 @@ header h1 {
 
 
 h2 {
-    font-size: 1.3rem; /* slightly smaller */
-    margin-bottom: 15px; /* reduced from 20px */
+    font-size: 1.15rem;
+    margin-bottom: 10px;
     font-weight: 600;
 }
 
@@ -187,13 +202,13 @@ h2 {
 .post-list {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* reduced from 20px */
+    gap: 10px;
     padding: 0;
-    margin-bottom: 30px; /* reduced from 40px */
+    margin-bottom: 20px;
 }
 
 .post {
-    padding: 12px; /* reduced from 15px */
+    padding: 8px;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -202,8 +217,8 @@ h2 {
 }
 
 .post h3 {
-    font-size: 1rem; /* slightly smaller */
-    margin-bottom: 4px;
+    font-size: 0.95rem;
+    margin-bottom: 3px;
 }
 
 .post h3 a {
@@ -224,8 +239,9 @@ h2 {
 }
 
 .post p {
-    font-size: 0.88rem; /* reduced */
+    font-size: 0.82rem;
     color: #444;
+    line-height: 1.4;
 }
 
 #about {

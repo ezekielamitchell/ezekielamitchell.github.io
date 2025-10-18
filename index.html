@@ -25,12 +25,14 @@
                     <a href="Ezekiel_Mitchell_resume.pdf" id="resume-link">[ resume ]</a>
                     <a href="#" id="about-link">[ about ]</a>
     <!-- About Popup -->
-    <div id="about-popup" class="about-popup" style="display:none;">
-        <button id="about-close" class="about-close" aria-label="Close about popup">&#10005;</button>
-        <div class="about-content">
-            <p>
-                A Marine Corps veteran and computer engineering student at Seattle University, building a career in <span class="about-key">defense robotics</span>, <span class="about-key">computer vision</span>, and <span class="about-key">AI</span>. My work focuses on context-aware systems—developing multimodal gaze estimation pipelines, <span class="about-key">threat detection</span>, and on-device AI solutions that operate fast, secure, and independent of the cloud. Through my research, I've engineered synchronized data collection frameworks integrating webcam, screenshot, and eye-tracker inputs, pushing toward models that understand context instead of just images.
-            </p>
+    <div id="about-popup-backdrop" class="about-popup-backdrop" style="display:none;">
+        <div class="about-popup">
+            <button id="about-close" class="about-close" aria-label="Close about popup">&#10005;</button>
+            <div class="about-content">
+                <p>
+                    A Marine Corps veteran and computer engineering student at Seattle University, building a career in <span class="about-key">defense robotics</span>, <span class="about-key">computer vision</span>, and <span class="about-key">AI</span>. My work focuses on context-aware systems—developing multimodal gaze estimation pipelines, <span class="about-key">threat detection</span>, and on-device AI solutions that operate fast, secure, and independent of the cloud. Through my research, I've engineered synchronized data collection frameworks integrating webcam, screenshot, and eye-tracker inputs, pushing toward models that understand context instead of just images.
+                </p>
+            </div>
         </div>
     </div>
                 </nav>
@@ -92,19 +94,19 @@
     // About popup logic
     document.addEventListener('DOMContentLoaded', function() {
         var aboutLink = document.getElementById('about-link');
-        var aboutPopup = document.getElementById('about-popup');
+        var aboutBackdrop = document.getElementById('about-popup-backdrop');
         var aboutClose = document.getElementById('about-close');
         aboutLink.addEventListener('click', function(e) {
             e.preventDefault();
-            aboutPopup.style.display = 'block';
+            aboutBackdrop.style.display = 'flex';
         });
         aboutClose.addEventListener('click', function() {
-            aboutPopup.style.display = 'none';
+            aboutBackdrop.style.display = 'none';
         });
-        // Close popup when clicking outside
-        aboutPopup.addEventListener('click', function(e) {
-            if (e.target === aboutPopup) {
-                aboutPopup.style.display = 'none';
+        // Close popup when clicking on backdrop (outside popup content)
+        aboutBackdrop.addEventListener('click', function(e) {
+            if (e.target === aboutBackdrop) {
+                aboutBackdrop.style.display = 'none';
             }
         });
     });
