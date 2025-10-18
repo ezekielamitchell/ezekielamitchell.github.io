@@ -1,70 +1,4 @@
-.about-key {
-    color: var(--header-bg);
-}
-/* About Popup Styles */
-.about-popup-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.about-popup {
-    background: rgba(40, 40, 40, 0.95);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 102, 0, 0.2);
-    box-shadow: 0 0 20px rgba(255, 102, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    z-index: 10001;
-    min-width: 400px;
-    max-width: 98vw;
-    width: 480px;
-    padding: 30px 28px 28px 28px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-}
-
-.about-content h2 {
-    margin-top: 0;
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: #f6f6ef;
-}
-
-.about-content p {
-    font-size: 0.92rem;
-    color: #e0e0e0;
-    margin-top: 0;
-    line-height: 1.5;
-}
-
-.about-close {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: none;
-    border: none;
-    color: var(--header-bg);
-    font-size: 1.3rem;
-    cursor: pointer;
-    z-index: 1002;
-    padding: 0;
-    line-height: 1;
-    opacity: 0.85;
-    transition: opacity 0.2s;
-}
-.about-close:hover {
-    opacity: 1;
-}
+/* === CLEAN, COMPACT, MINIMALIST STYLES === */
 :root {
     --bg-color: #f6f6ef;
     --text-color: #222;
@@ -81,22 +15,23 @@
 }
 
 body {
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.25;
+    font-size: 0.814rem;
+    line-height: 1.265;
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 15px; /* reduced from 20px */
+    padding: 13.2px;
 }
 
 header {
     background-color: var(--header-bg);
-    padding: 8px 15px;
-    margin-bottom: 16px;
+    padding: 6.6px 13.2px;
+    margin-bottom: 14.3px;
     border-radius: 4px;
 }
 
@@ -104,10 +39,11 @@ header {
     display: flex;
     flex-direction: column;
 }
+
 .title-row {
     display: flex;
     align-items: baseline;
-    gap: 8px;
+    gap: 3.3px;
 }
 
 .sep {
@@ -123,52 +59,53 @@ header {
     color: white;
     text-decoration: none;
     font-weight: 600;
+    font-size: 1.1638rem;
 }
 
 .site-tag {
     color: rgba(255,255,255,0.9);
-    font-size: 0.8rem;
-    opacity: 0.95;
-}
-.site-tag {
-    color: rgba(255,255,255,0.9);
-    font-size: 0.85rem; /* keep smaller than name */
+    font-size: 0.748rem;
     opacity: 0.95;
 }
 
 .site-tag a {
     color: rgba(255,255,255,0.95);
-    text-decoration: none; /* remove blue/underline */
+    text-decoration: none;
 }
 
 .main-nav {
-    margin: 6px 0 0 0; /* small gap above nav, no left indent */
-    padding: 0; /* ensure no left padding */
+    margin: 5.5px 0 0 0;
+    padding: 0;
     display: flex;
-    gap: 12px;
+    gap: 11px;
 }
 
 .main-nav a {
     color: white;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.836rem;
     text-transform: lowercase;
     position: relative;
-    padding: 0 4px; /* minimal padding so brackets sit comfortably */
-    transform: translateX(-3.5px); /* small left nudge to visually align with name */
+    padding: 0 3.3px;
+    transform: translateX(-3.85px);
     border-radius: 0;
-    background: transparent; /* remove glass effect */
+    background: transparent;
     border: none;
 }
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
 nav {
     display: flex;
-    gap: 15px; /* reduced from 20px */
+    gap: 13.2px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.792rem;
     opacity: 0.9;
     transition: opacity 0.2s;
 }
@@ -177,38 +114,22 @@ nav a:hover {
     opacity: 1;
 }
 
-.main-nav a:hover {
-    text-decoration: underline;
-}
-
-
-/* avatar removed per user request */
-
-header h1 {
-    color: white;
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-
 h2 {
-    font-size: 1.15rem;
-    margin-bottom: 10px;
+    font-size: 1.012rem;
+    margin-bottom: 4.4px;
     font-weight: 600;
 }
-
 
 .post-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 4.4px;
     padding: 0;
-    margin-bottom: 20px;
+    margin-bottom: 8.8px;
 }
 
 .post {
-    padding: 8px;
+    padding: 3.3px;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -217,8 +138,8 @@ h2 {
 }
 
 .post h3 {
-    font-size: 0.95rem;
-    margin-bottom: 3px;
+    font-size: 0.836rem;
+    margin-bottom: 2.2px;
 }
 
 .post h3 a {
@@ -232,52 +153,153 @@ h2 {
 }
 
 .post time {
-    font-size: 0.75rem; /* slightly smaller */
+    font-size: 0.66rem;
     color: #666;
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 2.2px;
 }
 
 .post p {
-    font-size: 0.82rem;
+    font-size: 0.726rem;
     color: #444;
-    line-height: 1.4;
+    line-height: 1.32;
 }
 
 #about {
-    margin-top: 40px;
-    padding: 20px;
+    margin-top: 17.6px;
+    padding: 8.8px;
     background: white;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
+/* About Popup Styles */
+.about-key {
+    color: var(--header-bg);
+}
+
+.about-popup-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-popup {
+    background: rgba(40, 40, 40, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 10001;
+    width: 100%;
+    max-width: 420px;
+    min-width: 320px;
+    padding: 20px 24px 18px 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: relative;
+}
+
+.about-content p {
+    font-size: 0.814rem;
+    color: #e0e0e0;
+    margin-top: 0;
+    line-height: 1.65;
+}
+
+.about-close {
+    margin-top: 2px;
+    margin-left: 0;
+    background: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: inherit;
+    font-weight: 700;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1002;
+    opacity: 0.88;
+    transition: background 0.2s, opacity 0.2s;
+    text-align: center;
+    line-height: 24px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.about-close:hover {
+    opacity: 1;
+    background: rgba(255,255,255,0.10);
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: static;
+    padding: 18px 0 8px 0;
+    background: none;
+    z-index: 100;
+}
+
+.footer-email {
+    color: #444;
+    font-size: 0.726rem;
+    opacity: 0.85;
+    pointer-events: auto;
+    text-decoration: none;
+    font-style: italic;
+    background: none;
+    box-shadow: none;
+    outline: none;
+    margin-left: 13.2px;
+}
+
+.footer-email:hover, .footer-email:focus, .footer-email:active {
+    color: #000;
+    opacity: 1;
+    text-decoration: none;
+    background: none;
+    box-shadow: none;
+    outline: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        padding: 15px;
+        padding: 11px;
     }
 
     header {
-        padding: 12px;
+        padding: 8.8px;
     }
-    
+
     h1 {
-        font-size: 1.1rem;
+        font-size: 0.968rem;
     }
-    
+
     nav {
-        gap: 15px;
+        gap: 11px;
     }
 
     .header-left {
-        gap: 6px;
+        gap: 2.2px;
     }
 
     .main-nav {
-        display: flex;
-        gap: 12px;
-        transform: none; /* reset nudge on small screens */
+        gap: 4.4px;
     }
 }
 

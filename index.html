@@ -24,29 +24,30 @@
                     <a href="https://github.com/ezekielamitchell" target="_blank" rel="noopener">[ github ]</a>
                     <a href="Ezekiel_Mitchell_resume.pdf" id="resume-link">[ resume ]</a>
                     <a href="#" id="about-link">[ about ]</a>
-    <!-- About Popup -->
-    <div id="about-popup-backdrop" class="about-popup-backdrop" style="display:none;">
-        <div class="about-popup">
-            <button id="about-close" class="about-close" aria-label="Close about popup">&#10005;</button>
-            <div class="about-content">
-                <p>
-                    A Marine Corps veteran and computer engineering student at Seattle University, building a career in <span class="about-key">defense robotics</span>, <span class="about-key">computer vision</span>, and <span class="about-key">AI</span>. My work focuses on context-aware systems—developing multimodal gaze estimation pipelines, <span class="about-key">threat detection</span>, and on-device AI solutions that operate fast, secure, and independent of the cloud. Through my research, I've engineered synchronized data collection frameworks integrating webcam, screenshot, and eye-tracker inputs, pushing toward models that understand context instead of just images.
-                </p>
-            </div>
-        </div>
-    </div>
                 </nav>
             </div>
         </header>
+
+        <!-- About Popup (moved outside nav for clarity) -->
+        <div id="about-popup-backdrop" class="about-popup-backdrop" style="display:none;">
+            <div class="about-popup" style="display: flex; align-items: flex-start; gap: 12px;">
+                <button id="about-close" class="about-close" aria-label="Close about popup">&#10005;</button>
+                <div class="about-content">
+                    <p>
+                        Marine Corps veteran and computer engineering student at Seattle University, focused on <span class="about-key">defense robotics</span> and <span class="about-key">computer vision</span>. I develop <span class="about-key">context-aware systems</span>—like multimodal gaze estimation pipelines, 360° threat detection modules, and fast, secure on-device AI. My research builds synchronized data frameworks combining webcam, screenshot, and eye-tracker inputs to train models that understand context, not just images.
+                    </p>
+                </div>
+            </div>
+        </div>
 
         <section id="posts">
             <h2>Thoughts</h2>
             <div class="post-list">
                 <!-- Posts will be dynamically added here -->
                 <article class="post">
-                    <h3><a href="#post1">Example Post Title</a></h3>
+                    <h3><a href="#post1">Hi, from Ezekiel</a></h3>
                     <time>October 17, 2025</time>
-                    <p>This is an example post description. Replace this with your actual content.</p>
+                    <p>Welcome.</p>
                 </article>
             </div>
         </section>
@@ -89,27 +90,33 @@
     </section>
     </div>
 
-    <script src="main.js"></script>
-    <script>
-    // About popup logic
-    document.addEventListener('DOMContentLoaded', function() {
-        var aboutLink = document.getElementById('about-link');
-        var aboutBackdrop = document.getElementById('about-popup-backdrop');
-        var aboutClose = document.getElementById('about-close');
-        aboutLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            aboutBackdrop.style.display = 'flex';
-        });
-        aboutClose.addEventListener('click', function() {
-            aboutBackdrop.style.display = 'none';
-        });
-        // Close popup when clicking on backdrop (outside popup content)
-        aboutBackdrop.addEventListener('click', function(e) {
-            if (e.target === aboutBackdrop) {
-                aboutBackdrop.style.display = 'none';
-            }
-        });
+</div>
+
+<footer>
+  <a href="mailto:ezekielmitchll@gmail.com" class="footer-email">ezekielmitchll@gmail.com</a>
+</footer>
+
+<script src="main.js"></script>
+<script>
+// About popup logic
+document.addEventListener('DOMContentLoaded', function() {
+    var aboutLink = document.getElementById('about-link');
+    var aboutBackdrop = document.getElementById('about-popup-backdrop');
+    var aboutClose = document.getElementById('about-close');
+    aboutLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        aboutBackdrop.style.display = 'flex';
     });
-    </script>
+    aboutClose.addEventListener('click', function() {
+        aboutBackdrop.style.display = 'none';
+    });
+    // Close popup when clicking on backdrop (outside popup content)
+    aboutBackdrop.addEventListener('click', function(e) {
+        if (e.target === aboutBackdrop) {
+            aboutBackdrop.style.display = 'none';
+        }
+    });
+});
+</script>
 </body>
 </html>
