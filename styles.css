@@ -43,6 +43,13 @@ header {
 .title-row {
     display: flex;
     align-items: baseline;
+    justify-content: space-between;
+    gap: 3.3px;
+}
+
+.title-left {
+    display: flex;
+    align-items: baseline;
     gap: 3.3px;
 }
 
@@ -95,6 +102,33 @@ header {
 
 .main-nav a:hover {
     text-decoration: underline;
+}
+
+.location {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.748rem;
+    opacity: 0.9;
+    align-self: baseline;
+}
+
+.nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 11px;
+}
+
+.header-email {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.726rem;
+    text-decoration: none;
+    opacity: 0.9;
+    white-space: nowrap;
+}
+
+.header-email:hover {
+    opacity: 1;
+    text-decoration: none;
 }
 
 nav {
@@ -241,39 +275,6 @@ h2 {
 .about-close:hover {
     opacity: 1;
     background: rgba(255,255,255,0.10);
-}
-
-footer {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    position: static;
-    padding: 18px 0 8px 0;
-    background: none;
-    z-index: 100;
-}
-
-.footer-email {
-    color: #444;
-    font-size: 0.726rem;
-    opacity: 0.85;
-    pointer-events: auto;
-    text-decoration: none;
-    font-style: italic;
-    background: none;
-    box-shadow: none;
-    outline: none;
-    margin-left: 13.2px;
-}
-
-.footer-email:hover, .footer-email:focus, .footer-email:active {
-    color: #000;
-    opacity: 1;
-    text-decoration: none;
-    background: none;
-    box-shadow: none;
-    outline: none;
 }
 
 /* Responsive Design */
