@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ezekiel Mitchell</title>
+    <title>Ezekiel A. Mitchell</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,16 @@
                     <a href="#projects">[ projects ]</a>
                     <a href="https://github.com/ezekielamitchell" target="_blank" rel="noopener">[ github ]</a>
                     <a href="Ezekiel_Mitchell_resume.pdf" id="resume-link">[ resume ]</a>
+                    <a href="#" id="about-link">[ about ]</a>
+    <!-- About Popup -->
+    <div id="about-popup" class="about-popup" style="display:none;">
+        <button id="about-close" class="about-close" aria-label="Close about popup">&#10005;</button>
+        <div class="about-content">
+            <p>
+                A Marine Corps veteran and computer engineering student at Seattle University, building a career in <span class="about-key">defense robotics</span>, <span class="about-key">computer vision</span>, and <span class="about-key">AI</span>. My work focuses on context-aware systems—developing multimodal gaze estimation pipelines, <span class="about-key">threat detection</span>, and on-device AI solutions that operate fast, secure, and independent of the cloud. Through my research, I've engineered synchronized data collection frameworks integrating webcam, screenshot, and eye-tracker inputs, pushing toward models that understand context instead of just images.
+            </p>
+        </div>
+    </div>
                 </nav>
             </div>
         </header>
@@ -44,20 +54,16 @@
         <h2>Current Projects</h2>
         <div class="post-list">
             <article class="post">
-                <h3><a href="#atlas">Project Atlas</a></h3>
-                <p>Building a real-time data visualization platform for environmental research.</p>
+                <h3><a href="https://github.com/ezekielamitchell/CASEset" target="_blank" rel="noopener">CASEset</a></h3>
+                <p>Dataset and training for Context-Aware Screen-based Estimation of Gaze (CASE).</p>
             </article>
             <article class="post">
-                <h3><a href="#opensource">Open Source Contributions</a></h3>
-                <p>Active in several JavaScript and Python communities.</p>
+                <h3><a href="https://github.com/ezekielamitchell/GUARDEN" target="_blank" rel="noopener">GUARDEN</a></h3>
+                <p>Garden Urban AI Rodent Detection and Environment Node.</p>
             </article>
             <article class="post">
-                <h3><a href="#blog">Personal Blog</a></h3>
-                <p>Writing about web performance, automation, and creative coding.</p>
-            </article>
-            <article class="post">
-                <h3><a href="#consulting">Consulting</a></h3>
-                <p>Helping startups architect scalable cloud solutions.</p>
+                <h3><a href="https://github.com/ezekielamitchell" target="_blank" rel="noopener">AWS Data Center (Senior Design Capstone)</a></h3>
+                <p>Building a mock data center for AWS as part of senior design capstone.</p>
             </article>
         </div>
     </section>
@@ -66,21 +72,42 @@
         <h2>Past Projects</h2>
         <div class="post-list">
             <article class="post">
-                <h3><a href="#company1">ACME Corp — Senior Engineer</a></h3>
-                <p>Led platform and API development, scaling services to handle high throughput.</p>
+                <h3><a href="https://github.com/ezekielamitchell/360-threat-detection" target="_blank" rel="noopener">360 Threat Detection Module</a></h3>
+                <p>Developed a comprehensive threat detection module for real-time security monitoring.</p>
             </article>
             <article class="post">
-                <h3><a href="#company2">DataLab — Staff Developer</a></h3>
-                <p>Worked on data pipelines and visualization tooling for research teams.</p>
+                <h3><a href="https://github.com/ezekielamitchell/promethean-lab-dashboard" target="_blank" rel="noopener">Promethean Lab Interactive Dashboard</a></h3>
+                <p>Built an interactive dashboard for Promethean Lab to visualize and analyze lab data.</p>
             </article>
             <article class="post">
-                <h3><a href="#company3">StartupX — Engineer</a></h3>
-                <p>Built product features and shipped multiple releases in an agile team.</p>
+                <h3><a href="https://github.com/ezekielamitchell/license-plate-anonymous" target="_blank" rel="noopener">License Plate Anonymous</a></h3>
+                <p>Created a privacy-focused tool for anonymizing license plate data in images and videos.</p>
             </article>
         </div>
     </section>
     </div>
 
     <script src="main.js"></script>
+    <script>
+    // About popup logic
+    document.addEventListener('DOMContentLoaded', function() {
+        var aboutLink = document.getElementById('about-link');
+        var aboutPopup = document.getElementById('about-popup');
+        var aboutClose = document.getElementById('about-close');
+        aboutLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            aboutPopup.style.display = 'block';
+        });
+        aboutClose.addEventListener('click', function() {
+            aboutPopup.style.display = 'none';
+        });
+        // Close popup when clicking outside
+        aboutPopup.addEventListener('click', function(e) {
+            if (e.target === aboutPopup) {
+                aboutPopup.style.display = 'none';
+            }
+        });
+    });
+    </script>
 </body>
 </html>
