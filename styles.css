@@ -43,16 +43,7 @@ header {
 .title-row {
     display: flex;
     align-items: baseline;
-    justify-content: space-between;
-    gap: 11px;
-    flex-wrap: nowrap;
-}
-
-.title-left {
-    display: flex;
-    align-items: baseline;
     gap: 3.3px;
-    flex-shrink: 0;
 }
 
 .sep {
@@ -104,37 +95,6 @@ header {
 
 .main-nav a:hover {
     text-decoration: underline;
-}
-
-.location {
-    color: rgba(255,255,255,0.85);
-    font-size: 0.748rem;
-    opacity: 0.9;
-    align-self: baseline;
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-.nav-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 11px;
-    flex-wrap: nowrap;
-}
-
-.header-email {
-    color: rgba(255,255,255,0.85);
-    font-size: 0.726rem;
-    text-decoration: none;
-    opacity: 0.9;
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-.header-email:hover {
-    opacity: 1;
-    text-decoration: none;
 }
 
 nav {
@@ -255,6 +215,35 @@ h2 {
     line-height: 1.65;
 }
 
+.about-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    width: 100%;
+}
+
+.about-email {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.726rem;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.about-email:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.about-location {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.726rem;
+    opacity: 0.85;
+    font-style: italic;
+}
+
 .about-close {
     margin-top: 2px;
     margin-left: 0;
@@ -302,25 +291,8 @@ h2 {
     }
 
     .title-row {
-        flex-direction: column;
         align-items: flex-start;
-        gap: 4.4px;
-    }
-
-    .location {
-        font-size: 0.66rem;
-        margin-left: 0;
-    }
-
-    .nav-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4.4px;
-    }
-
-    .header-email {
-        font-size: 0.66rem;
-        margin-left: 0;
+        gap: 2.2px;
     }
 
     nav {
