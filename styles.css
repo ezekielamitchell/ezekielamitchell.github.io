@@ -75,12 +75,10 @@ header {
 }
 
 .main-nav {
-    margin: 6px 0 0 0;
-    padding: 0;
+    margin: 6px 0 0 0; /* small gap above nav, no left indent */
+    padding: 0; /* ensure no left padding */
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
+    gap: 12px;
 }
 
 .main-nav a {
@@ -89,31 +87,33 @@ header {
     font-size: 0.95rem;
     text-transform: lowercase;
     position: relative;
-    padding: 0 4px;
+    padding: 0 4px; /* minimal padding so brackets sit comfortably */
+    transform: translateX(-3.5px); /* small left nudge to visually align with name */
     border-radius: 0;
-    background: transparent;
+    background: transparent; /* remove glass effect */
     border: none;
+}
+nav {
+    display: flex;
+    gap: 15px; /* reduced from 20px */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+nav a:hover {
+    opacity: 1;
 }
 
 .main-nav a:hover {
     text-decoration: underline;
 }
 
-/* Add bracket visuals using pseudo elements */
-.main-nav a::before,
-.main-nav a::after {
-    color: rgba(255,255,255,0.95);
-    content: '[';
-    font-weight: 600;
-    margin: 0 6px 0 0;
-}
-.main-nav a::after {
-    content: ']';
-    margin: 0 0 0 6px;
-}
-.main-nav a span {
-    text-transform: lowercase;
-}
 
 /* avatar removed per user request */
 
