@@ -297,16 +297,51 @@ h2 {
         font-size: 0.968rem;
     }
 
+    .header-left h1 a {
+        font-size: 0.968rem;
+    }
+
+    .title-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4.4px;
+    }
+
+    .location {
+        font-size: 0.66rem;
+        margin-left: 0;
+    }
+
+    .nav-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4.4px;
+    }
+
+    .header-email {
+        font-size: 0.66rem;
+        margin-left: 0;
+    }
+
     nav {
         gap: 11px;
     }
 
     .header-left {
-        gap: 2.2px;
+        gap: 4.4px;
     }
 
     .main-nav {
-        gap: 4.4px;
+        gap: 6.6px;
+        flex-wrap: wrap;
+    }
+
+    .main-nav a {
+        font-size: 0.748rem;
+    }
+
+    .site-tag {
+        font-size: 0.66rem;
     }
 }
 
