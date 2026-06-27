@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 420" fill="none" stroke="#1a1a17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  
+  <defs>
+    <g id="horse">
+      
+      <path d="M150 250&#xA;               C150 215 158 196 172 178&#xA;               C182 165 188 156 190 142&#xA;               C191 134 188 126 192 120&#xA;               C196 114 204 112 210 110&#xA;               C214 100 214 92 210 86&#xA;               C214 88 220 92 222 100&#xA;               C228 98 233 100 236 106&#xA;               C238 112 235 118 230 122&#xA;               C236 126 240 132 240 140&#xA;               C240 150 232 158 222 162&#xA;               C214 165 206 168 200 176&#xA;               C194 184 192 196 192 210"></path>
+      
+      <path d="M150 250 C156 220 162 200 174 182 C166 196 162 214 160 236" stroke-width="1.1" opacity="0.55"></path>
+      
+      <path d="M192 210&#xA;               C190 226 186 240 176 252&#xA;               C168 262 158 270 156 282&#xA;               C162 276 170 272 176 274&#xA;               C172 282 168 290 170 298&#xA;               C176 290 184 284 190 286&#xA;               C188 294 186 302 190 308"></path>
+      
+      <path d="M192 210 C200 224 210 234 214 252 C218 272 216 296 206 320"></path>
+      
+      <path d="M150 250 C150 280 156 308 166 332 C172 346 182 356 196 360"></path>
+      
+      <path d="M196 360 C190 372 186 386 188 398 M206 320 C204 340 202 360 200 380"></path>
+      
+      <path d="M166 332 C150 340 138 352 132 368 C140 358 150 352 160 350" stroke-width="1.2" opacity="0.7"></path>
+      
+      <circle cx="214" cy="120" r="2.2" stroke-width="1" fill="#1a1a17"></circle>
+      <path d="M226 116 C223 117 221 119 221 121" stroke-width="1" opacity="0.7"></path>
+    </g>
+  </defs>
+
+  <use href="#horse"></use>
+  <use href="#horse" transform="translate(460,0) scale(-1,1)"></use>
+
+  
+  <g opacity="0.4" stroke-width="1">
+    <line x1="230" y1="70" x2="230" y2="120"></line>
+    <circle cx="230" cy="135" r="9"></circle>
+    <line x1="230" y1="360" x2="230" y2="400"></line>
+  </g>
+
+  
+  <g stroke-width="1" opacity="0.32">
+    <line x1="230" y1="24" x2="230" y2="44"></line>
+    <line x1="24" y1="240" x2="44" y2="240"></line>
+    <line x1="436" y1="240" x2="416" y2="240"></line>
+  </g>
+</svg>

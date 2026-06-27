@@ -1,118 +1,375 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ezekiel A. Mitchell</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="header-left">
-                <div class="title-row">
-                    <h1><a href="/">Ezekiel A. Mitchell</a></h1>
-                </div>
-                <nav class="main-nav">
-                    <a href="#posts">[ thoughts ]</a>
-                    <a href="#projects">[ projects ]</a>
-                    <a href="https://github.com/ezekielamitchell" target="_blank" rel="noopener">[ github ]</a>
-                    <a href="Ezekiel_Mitchell_resume.pdf" id="resume-link">[ resume ]</a>
-                    <a href="#" id="about-link">[ about ]</a>
-                </nav>
-            </div>
-        </header>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=Archivo:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  ::selection{background:#1a1a17;color:#f4f1e9;}
+  a{transition:opacity .15s ease,background .15s ease,color .15s ease;}
+  @media (max-width:760px){
+    .proj-grid,.about-grid,.exp-grid,.edu-grid{grid-template-columns:1fr !important;}
+    .skills-grid{grid-template-columns:1fr 1fr !important;}
+    .about-grid > div,.exp-grid > div:first-child,.edu-grid > div:first-child{border-right:none !important;}
+    .about-img-panel{order:-1;padding:30px 24px !important;}
+    .hero-name{font-size:44px !important;}
+    .cta-head{font-size:30px !important;}
+    .top-nav{gap:18px !important;}
+  }
+  @media (max-width:460px){
+    .skills-grid{grid-template-columns:1fr !important;}
+    .skills-grid > div{border-right:none !important;}
+    .hero-name{font-size:36px !important;}
+  }
+</style>
+</helmet>
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#f4f1e9"/>
+    <text x="50" y="50" font-family="Georgia, 'Newsreader', serif" font-size="34" fill="#1a1a17" text-anchor="middle" dominant-baseline="central">EM</text>
+  </svg>
+</template>
+<div style="min-height:100vh;background:{{ paper }};color:#1a1a17;font-family:'Archivo',sans-serif;">
 
-        <!-- About Popup (moved outside nav for clarity) -->
-        <div id="about-popup-backdrop" class="about-popup-backdrop" style="display:none;">
-            <div class="about-popup" style="display: flex; align-items: flex-start; gap: 12px;">
-                <button id="about-close" class="about-close" aria-label="Close about popup">&#10005;</button>
-                <div class="about-content">
-                    <p>
-                        Marine Corps veteran and computer engineering student at Seattle University, focused on <span class="about-key">defense robotics</span> and <span class="about-key">computer vision</span>. I develop <span class="about-key">context-aware systems</span>—like multimodal gaze estimation pipelines, 360° threat detection modules, and fast, secure on-device AI. My research builds synchronized data frameworks combining webcam, screenshot, and eye-tracker inputs to train models that understand context, not just images.
-                    </p>
-                    <div class="about-footer">
-                        <a href="mailto:ezekielmitchll@gmail.com" class="about-email">ezekielmitchll@gmail.com</a>
-                        <span class="about-location">seattle, wa</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div style="max-width:1600px;margin:0 auto;border-left:1px solid rgba(26,26,23,0.14);border-right:1px solid rgba(26,26,23,0.14);background:{{ paper }};position:relative;">
 
-        <section id="posts">
-            <h2>Thoughts</h2>
-            <div class="post-list">
-                <!-- Posts will be dynamically added here -->
-                <article class="post">
-                    <h3><a href="#post1">Hi, from Ezekiel</a></h3>
-                    <time>October 17, 2025</time>
-                    <p>Welcome.</p>
-                </article>
-            </div>
-        </section>
-
-
-    <section id="projects">
-        <h2>Current Projects</h2>
-        <div class="post-list">
-            <article class="post">
-                <h3><a href="https://github.com/ezekielamitchell/CASEset" target="_blank" rel="noopener">CASEset</a></h3>
-                <p>Dataset and training for Context-Aware Screen-based Estimation of Gaze (CASE).</p>
-            </article>
-            <article class="post">
-                <h3><a href="https://github.com/ezekielamitchell/GUARDEN" target="_blank" rel="noopener">GUARDEN</a></h3>
-                <p>Garden Urban AI Rodent Detection and Environment Node.</p>
-            </article>
-            <article class="post">
-                <h3><a href="https://github.com/ezekielamitchell" target="_blank" rel="noopener">AWS Data Center (Senior Design Capstone)</a></h3>
-                <p>Building a mock data center for AWS as part of senior design capstone.</p>
-            </article>
-        </div>
-    </section>
-    
-    <section id="past">
-        <h2>Past Projects</h2>
-        <div class="post-list">
-            <article class="post">
-                <h3><a href="https://github.com/ezekielamitchell/360-threat-detection" target="_blank" rel="noopener">360 Threat Detection Module</a></h3>
-                <p>Developed a comprehensive threat detection module for real-time security monitoring.</p>
-            </article>
-            <article class="post">
-                <h3><a href="https://github.com/ezekielamitchell/promethean-lab-dashboard" target="_blank" rel="noopener">Promethean Lab Interactive Dashboard</a></h3>
-                <p>Built an interactive dashboard for Promethean Lab to visualize and analyze lab data.</p>
-            </article>
-            <article class="post">
-                <h3><a href="https://github.com/ezekielamitchell/license-plate-anonymous" target="_blank" rel="noopener">License Plate Anonymous</a></h3>
-                <p>Created a privacy-focused tool for anonymizing license plate data in images and videos.</p>
-            </article>
-        </div>
-    </section>
+    <!-- TOP BAR -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 34px;border-bottom:1px solid rgba(26,26,23,0.14);">
+      <a href="#top" style="display:flex;flex-direction:column;gap:2px;text-decoration:none;">
+        <div style="font-family:'Newsreader',serif;font-size:17px;font-weight:500;color:#1a1a17;line-height:1;">Ezekiel A. Mitchell</div>
+        <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a80;">Seattle, WA</div>
+      </a>
+      <div class="top-nav" style="display:flex;align-items:center;gap:28px;">
+        <a href="#about" style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#56564f;text-decoration:none;" style-hover="color:#1a1a17;">About</a>
+        <a href="#work" style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#56564f;text-decoration:none;" style-hover="color:#1a1a17;">Experience</a>
+        <a href="#projects" style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#56564f;text-decoration:none;" style-hover="color:#1a1a17;">Projects</a>
+        <a href="#education" style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#56564f;text-decoration:none;" style-hover="color:#1a1a17;">Education</a>
+        <a href="#contact" style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#1a1a17;text-decoration:none;border-bottom:1px solid rgba(26,26,23,0.4);padding-bottom:2px;" style-hover="border-bottom-color:#1a1a17;">Contact</a>
+      </div>
     </div>
 
-<script src="main.js"></script>
-<script>
-// About popup logic
-document.addEventListener('DOMContentLoaded', function() {
-    var aboutLink = document.getElementById('about-link');
-    var aboutBackdrop = document.getElementById('about-popup-backdrop');
-    var aboutClose = document.getElementById('about-close');
-    aboutLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        aboutBackdrop.style.display = 'flex';
-    });
-    aboutClose.addEventListener('click', function() {
-        aboutBackdrop.style.display = 'none';
-    });
-    // Close popup when clicking on backdrop (outside popup content)
-    aboutBackdrop.addEventListener('click', function(e) {
-        if (e.target === aboutBackdrop) {
-            aboutBackdrop.style.display = 'none';
-        }
-    });
-});
+    <!-- HERO -->
+    <div id="top" style="padding:62px 34px 60px;text-align:center;position:relative;">
+      <div style="font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:#8a8a80;margin-bottom:28px;">Computer Vision &nbsp;·&nbsp; Deep Learning &nbsp;·&nbsp; Autonomous Systems</div>
+      <h1 class="hero-name" style="font-family:'Newsreader',serif;font-weight:400;font-size:64px;line-height:1.05;letter-spacing:-0.01em;margin:0 auto;max-width:880px;">Ezekiel A. Mitchell</h1>
+      <p style="font-family:'Newsreader',serif;font-size:20px;line-height:1.5;color:#454540;max-width:540px;margin:26px auto 0;">Applied AI engineer building computer-vision and autonomous systems for defense-relevant applications.</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:34px;">
+        <a href="#contact" style="display:inline-block;background:#1a1a17;color:#f4f1e9;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:13px 26px;border:1px solid #1a1a17;" style-hover="opacity:0.86;">Get in touch</a>
+        <a href="#projects" style="display:inline-block;background:transparent;color:#1a1a17;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:13px 26px;border:1px solid rgba(26,26,23,0.28);" style-hover="border-color:#1a1a17;">View work</a>
+        <a href="https://github.com/ezekielamitchell" target="_blank" rel="noopener" style="display:inline-block;background:transparent;color:#1a1a17;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:13px 26px;border:1px solid rgba(26,26,23,0.28);" style-hover="border-color:#1a1a17;">GitHub</a>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="about" class="about-grid" style="display:grid;grid-template-columns:1fr 360px;border-bottom:1px solid rgba(26,26,23,0.14);align-items:stretch;">
+      <div style="padding:78px 48px;border-right:1px solid rgba(26,26,23,0.1);">
+        <div style="font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:#8a8a80;margin-bottom:22px;">About</div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:38px;line-height:1.18;margin:0;max-width:620px;">Applied AI Engineer building autonomous systems for defense</h2>
+        <p style="font-family:'Newsreader',serif;font-size:18px;line-height:1.62;color:#454540;max-width:560px;margin:26px 0 0;">Focused on computer vision, edge AI, and autonomous system development for defense-relevant applications. My work centers on context-aware gaze estimation, operator-attention modeling, and human-machine teaming.</p>
+      </div>
+      <div class="about-img-panel" style="position:relative;background-image:linear-gradient(rgba(26,26,23,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(26,26,23,0.05) 1px,transparent 1px);background-size:38px 38px;display:flex;align-items:flex-end;justify-content:center;padding:34px 34px 0;">
+        <span style="position:absolute;top:14px;left:14px;font-size:13px;color:rgba(26,26,23,0.4);line-height:1;">+</span>
+        <span style="position:absolute;top:14px;right:14px;font-size:13px;color:rgba(26,26,23,0.4);line-height:1;">+</span>
+        <img src="assets/portrait-duotone.png" alt="Ezekiel A. Mitchell" style="display:block;width:230px;height:auto;border:1px solid rgba(26,26,23,0.14);">
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div id="work" style="border-bottom:1px solid rgba(26,26,23,0.14);">
+      <div style="padding:48px 34px 26px;text-align:center;">
+        <div style="font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:#8a8a80;margin:0;">Experience</div>
+      </div>
+
+      <sc-for list="{{ roles }}" as="r" hint-placeholder-count="3">
+        <div class="exp-grid" style="display:grid;grid-template-columns:340px 1fr;border-top:1px solid rgba(26,26,23,0.14);">
+          <div style="padding:34px;border-right:1px solid rgba(26,26,23,0.1);">
+            <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:21px;line-height:1.25;margin:0 0 16px;">{{ r.title }}</h3>
+            <div style="font-size:13px;color:#1a1a17;margin-bottom:5px;font-weight:500;">{{ r.org }}</div>
+            <div style="font-size:12px;letter-spacing:0.04em;color:#8a8a80;">{{ r.dates }}</div>
+            <div style="font-size:12px;letter-spacing:0.04em;color:#8a8a80;">{{ r.place }}</div>
+          </div>
+          <div style="padding:34px;">
+            <sc-for list="{{ r.points }}" as="p" hint-placeholder-count="2">
+              <div style="display:flex;gap:14px;margin-bottom:18px;">
+                <span style="color:#b3b0a4;line-height:1.5;flex-shrink:0;font-size:14px;">—</span>
+                <p style="font-size:14.5px;line-height:1.62;color:#3a3a35;margin:0;">{{ p }}</p>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- PROJECTS -->
+    <div id="projects" style="border-bottom:1px solid rgba(26,26,23,0.14);">
+      <div style="padding:48px 34px 26px;text-align:center;">
+        <div style="font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:#8a8a80;margin:0;">Selected Projects</div>
+      </div>
+      <div class="proj-grid" style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(26,26,23,0.14);">
+        <sc-for list="{{ projects }}" as="pr" hint-placeholder-count="4">
+          <div style="padding:34px;border-right:1px solid rgba(26,26,23,0.1);border-bottom:1px solid rgba(26,26,23,0.1);">
+            <div style="display:flex;gap:22px;align-items:flex-start;">
+              <div style="flex:0 0 96px;width:96px;height:96px;border:1px solid rgba(26,26,23,0.16);background-color:#f4f1e9;background-image:linear-gradient(rgba(26,26,23,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(26,26,23,0.05) 1px,transparent 1px);background-size:16px 16px;padding:11px;">{{ pr.thumb }}</div>
+              <div style="flex:1;min-width:0;">
+                <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px;gap:14px;">
+                  <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:22px;margin:0;"><a href="{{ pr.url }}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px;transition:border-color .18s ease,opacity .18s ease;" style-hover="border-bottom-color:rgba(26,26,23,0.45);">{{ pr.name }}</a></h3>
+                  <span style="font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:#8a8a80;white-space:nowrap;">{{ pr.role }}</span>
+                </div>
+                <p style="font-size:14.5px;line-height:1.6;color:#3a3a35;margin:0 0 18px;">{{ pr.desc }}</p>
+                <div style="font-size:11px;letter-spacing:0.06em;color:#8a8a80;border-top:1px solid rgba(26,26,23,0.1);padding-top:14px;">{{ pr.stack }}</div>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div id="skills" style="border-bottom:1px solid rgba(26,26,23,0.14);">
+      <div style="padding:48px 34px 26px;text-align:center;">
+        <div style="font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:#8a8a80;margin:0;">Skills</div>
+      </div>
+      <div class="skills-grid" style="display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(26,26,23,0.14);">
+        <sc-for list="{{ skills }}" as="s" hint-placeholder-count="4">
+          <div style="padding:30px 26px;border-right:1px solid rgba(26,26,23,0.1);">
+            <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a80;margin-bottom:18px;">{{ s.cat }}</div>
+            <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="4">
+              <div style="font-family:'Newsreader',serif;font-size:17px;color:#1a1a17;padding:7px 0;border-bottom:1px solid rgba(26,26,23,0.07);">{{ it }}</div>
+            </sc-for>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div id="education" style="border-bottom:1px solid rgba(26,26,23,0.14);">
+      <div style="padding:48px 34px 26px;text-align:center;">
+        <div style="font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:#8a8a80;margin:0;">Education</div>
+      </div>
+      <sc-for list="{{ education }}" as="e" hint-placeholder-count="3">
+        <div class="edu-grid" style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(26,26,23,0.14);align-items:center;">
+          <div style="padding:28px 34px;border-right:1px solid rgba(26,26,23,0.1);">
+            <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:20px;margin:0 0 4px;">{{ e.school }}</h3>
+            <div style="font-size:12px;letter-spacing:0.04em;color:#8a8a80;">{{ e.place }} &nbsp;·&nbsp; {{ e.dates }}</div>
+          </div>
+          <div style="padding:28px 34px;">
+            <div style="font-size:15px;color:#1a1a17;">{{ e.degree }}</div>
+            <div style="font-size:13px;color:#8a8a80;margin-top:4px;">{{ e.detail }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- CTA -->
+    <div id="contact" style="position:relative;border-bottom:1px solid rgba(26,26,23,0.14);padding:84px 34px;text-align:center;background-image:linear-gradient(rgba(26,26,23,0.045) 1px,transparent 1px),linear-gradient(90deg,rgba(26,26,23,0.045) 1px,transparent 1px);background-size:38px 38px;">
+      <span style="position:absolute;top:14px;left:14px;font-size:13px;color:rgba(26,26,23,0.35);line-height:1;">+</span>
+      <span style="position:absolute;top:14px;right:14px;font-size:13px;color:rgba(26,26,23,0.35);line-height:1;">+</span>
+      <span style="position:absolute;bottom:14px;left:14px;font-size:13px;color:rgba(26,26,23,0.35);line-height:1;">+</span>
+      <span style="position:absolute;bottom:14px;right:14px;font-size:13px;color:rgba(26,26,23,0.35);line-height:1;">+</span>
+      <div style="font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:#8a8a80;margin-bottom:22px;">Get in touch</div>
+      <h2 class="cta-head" style="font-family:'Newsreader',serif;font-weight:400;font-size:40px;line-height:1.16;letter-spacing:-0.01em;margin:0 auto;max-width:660px;">Let's work together.</h2>
+      <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:34px;">
+        <a href="mailto:ezekielmitchll@gmail.com" style="display:inline-block;background:#1a1a17;color:#f4f1e9;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:13px 26px;border:1px solid #1a1a17;" style-hover="opacity:0.86;">Email me</a>
+        <a href="https://linkedin.com/in/ezekielamitchell" target="_blank" rel="noopener" style="display:inline-block;background:transparent;color:#1a1a17;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:13px 26px;border:1px solid rgba(26,26,23,0.28);" style-hover="border-color:#1a1a17;">LinkedIn</a>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:30px 34px;flex-wrap:wrap;gap:16px;">
+      <div style="font-family:'Newsreader',serif;font-size:16px;font-weight:500;">Ezekiel A. Mitchell</div>
+      <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+        <a href="mailto:ezekielmitchll@gmail.com" style="font-size:13px;color:#1a1a17;text-decoration:none;border-bottom:1px solid rgba(26,26,23,0.3);padding-bottom:2px;">ezekielmitchll@gmail.com</a>
+        <a href="https://github.com/ezekielamitchell" target="_blank" style="font-size:13px;color:#56564f;text-decoration:none;border-bottom:1px solid rgba(26,26,23,0.18);padding-bottom:2px;">github.com/ezekielamitchell</a>
+        <a href="https://linkedin.com/in/ezekielamitchell" target="_blank" style="font-size:13px;color:#56564f;text-decoration:none;border-bottom:1px solid rgba(26,26,23,0.18);padding-bottom:2px;">linkedin.com/in/ezekielamitchell</a>
+        <a href="https://x.com/ezekielmitchll" target="_blank" style="font-size:13px;color:#56564f;text-decoration:none;border-bottom:1px solid rgba(26,26,23,0.18);padding-bottom:2px;">x.com/ezekielmitchll</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1140,&quot;height&quot;:900},&quot;paperTone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;warm&quot;,&quot;cool&quot;,&quot;white&quot;],&quot;default&quot;:&quot;warm&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;gridIntensity&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:0.05,&quot;min&quot;:0,&quot;max&quot;:0.14,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const paperTone = this.props.paperTone ?? 'warm';
+    const paperMap = { warm: '#f4f1e9', cool: '#f1f2ef', white: '#faf9f5' };
+    const svgWrap = (inner) => `<svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" stroke="#3a3a35" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" preserveAspectRatio="xMidYMid meet">${inner}</svg>`;
+    const thumbs = {
+      argus: svgWrap(`
+        <rect x="52" y="14" width="36" height="27"/>
+        <line x1="52" y1="23" x2="88" y2="23" opacity="0.45"/>
+        <line x1="52" y1="32" x2="88" y2="32" opacity="0.45"/>
+        <line x1="64" y1="14" x2="64" y2="41" opacity="0.45"/>
+        <line x1="76" y1="14" x2="76" y2="41" opacity="0.45"/>
+        <path d="M10 72 Q21 62 32 72 Q21 82 10 72 Z"/>
+        <circle cx="21" cy="72" r="3.3" fill="#3a3a35" stroke="none"/>
+        <path d="M31 66 L59 40" stroke-dasharray="3 3" opacity="0.7"/>
+        <path d="M59 40 l-6 1.4 M59 40 l1.4 6" opacity="0.7"/>
+        <path d="M70 62 l8 0 l4 7 l-4 7 l-8 0 l-4 -7 Z"/>
+        <circle cx="74" cy="69" r="1.7" fill="#3a3a35" stroke="none"/>
+        <path d="M70 42 L72 60" stroke-dasharray="2 3" opacity="0.4"/>`),
+      winter: svgWrap(`
+        <path d="M10 22 q8 -8 16 0 q8 8 16 0 q8 -8 16 0 q8 8 16 0" opacity="0.55"/>
+        <rect x="14" y="50" width="18" height="34"/>
+        <line x1="14" y1="58" x2="32" y2="58" opacity="0.5"/>
+        <line x1="14" y1="66" x2="32" y2="66" opacity="0.5"/>
+        <line x1="14" y1="74" x2="32" y2="74" opacity="0.5"/>
+        <rect x="41" y="50" width="18" height="34"/>
+        <line x1="41" y1="58" x2="59" y2="58" opacity="0.5"/>
+        <line x1="41" y1="66" x2="59" y2="66" opacity="0.5"/>
+        <line x1="41" y1="74" x2="59" y2="74" opacity="0.5"/>
+        <circle cx="78" cy="40" r="4"/>
+        <circle cx="78" cy="64" r="4"/>
+        <path d="M50 50 L74 42" stroke-dasharray="2 3" opacity="0.6"/>
+        <path d="M50 60 L74 63" stroke-dasharray="2 3" opacity="0.6"/>
+        <path d="M78 44 L78 60" opacity="0.45"/>`),
+      caseset: svgWrap(`
+        <rect x="12" y="20" width="30" height="24"/>
+        <circle cx="27" cy="32" r="5"/>
+        <circle cx="27" cy="32" r="1.6" fill="#3a3a35" stroke="none"/>
+        <rect x="56" y="20" width="32" height="24"/>
+        <line x1="64" y1="32" x2="80" y2="32" opacity="0.55"/>
+        <line x1="72" y1="26" x2="72" y2="38" opacity="0.55"/>
+        <circle cx="72" cy="32" r="2.4"/>
+        <line x1="14" y1="70" x2="86" y2="70" opacity="0.6"/>
+        <line x1="22" y1="64" x2="22" y2="76"/>
+        <line x1="38" y1="66" x2="38" y2="74" opacity="0.6"/>
+        <line x1="50" y1="64" x2="50" y2="76"/>
+        <line x1="62" y1="66" x2="62" y2="74" opacity="0.6"/>
+        <line x1="78" y1="64" x2="78" y2="76"/>
+        <path d="M27 44 L27 64" stroke-dasharray="2 3" opacity="0.4"/>
+        <path d="M72 44 L50 64" stroke-dasharray="2 3" opacity="0.4"/>`),
+      guarden: svgWrap(`
+        <line x1="20" y1="88" x2="20" y2="50"/>
+        <circle cx="20" cy="44" r="6"/>
+        <circle cx="20" cy="44" r="2" fill="#3a3a35" stroke="none"/>
+        <path d="M29 38 q6 6 0 12" opacity="0.6"/>
+        <path d="M33 34 q10 10 0 20" opacity="0.38"/>
+        <rect x="50" y="28" width="32" height="25" stroke-dasharray="4 3"/>
+        <line x1="66" y1="34" x2="66" y2="47" opacity="0.7"/>
+        <line x1="59" y1="40.5" x2="73" y2="40.5" opacity="0.7"/>
+        <rect x="58" y="66" width="18" height="15"/>
+        <line x1="58" y1="70" x2="53" y2="70" opacity="0.6"/>
+        <line x1="58" y1="77" x2="53" y2="77" opacity="0.6"/>
+        <line x1="76" y1="70" x2="81" y2="70" opacity="0.6"/>
+        <line x1="76" y1="77" x2="81" y2="77" opacity="0.6"/>
+        <line x1="63" y1="66" x2="63" y2="61" opacity="0.6"/>
+        <line x1="71" y1="66" x2="71" y2="61" opacity="0.6"/>
+        <path d="M66 53 L67 66" stroke-dasharray="2 3" opacity="0.4"/>`),
+    };
+    const mkThumb = (key) => React.createElement('div', { style: { width: '100%', height: '100%' }, dangerouslySetInnerHTML: { __html: thumbs[key] } });
+    return {
+      paper: paperMap[paperTone] ?? '#f4f1e9',
+      gridA: this.props.gridIntensity ?? 0.03,
+      focus: ['Computer Vision', 'Deep Learning', 'Autonomous Systems', 'Robotics'],
+      roles: [
+        {
+          title: 'Undergraduate Research Assistant — Computer Vision, Deep Learning',
+          org: 'Seattle University',
+          dates: 'May 2024 — Jun. 2026',
+          place: 'Seattle, WA',
+          points: [
+            'Engineered and deployed an automated multimodal data collection pipeline (webcam, screenshots, TOBII gaze), achieving 98% capture accuracy and <50 ms synchronization latency.',
+            'Led development of the CASEset dataset and deep learning training pipeline; recruited and managed 13 participants to collect 15K+ labeled frames (32 hrs), extending the IEEE-published “CASE: Context-Aware Screen-based Estimation of Gaze.”',
+            'Designed and implemented high-accuracy object detection, recognition, and tracking pipelines using Python, PyTorch, and OpenCV.',
+          ],
+        },
+        {
+          title: 'Engineering & QA Laboratory Manager',
+          org: 'Promethean',
+          dates: 'Sep. 2024 — May 2025',
+          place: 'Seattle, WA',
+          points: [
+            'Developed automated Python scripts integrating ADB, serial communication, MQTT telemetry, and AWS S3 APIs to streamline firmware updates and hardware testing, reducing manual intervention by 80%.',
+            'Collaborated with senior engineers on secure API integrations between testing equipment and cloud infrastructure, implementing encryption protocols for remote hardware management and data integrity validation.',
+          ],
+        },
+        {
+          title: 'Department Manager — Sergeant, Armory Chief',
+          org: 'United States Marine Corps',
+          dates: 'Jan. 2017 — Jan. 2021',
+          place: 'Okinawa, Japan',
+          points: [
+            'Maintained 100% systems readiness of serialized technical systems and armory compliance per Marine Corps Battalion order 8000.2C, with zero discrepancies found during biennial audit.',
+            'Supervised over $3.5M in military-technical systems for 9 strategic objectives and 1,300 personnel across four countries — overseeing ordering, issuing, tracking, and maintenance.',
+          ],
+        },
+      ],
+      projects: [
+        {
+          name: 'ARGUS',
+          role: 'Research Engineer',
+          url: 'https://github.com/ezekielamitchell/argus',
+          thumb: mkThumb('argus'),
+          desc: 'Early-stage research and engineering program for attention-aware autonomy, focused on context-aware gaze estimation, operator-attention modeling, and human-machine teaming for defense-relevant autonomous systems.',
+          stack: 'Python · Computer Vision · Gaze Estimation · Human-Machine Teaming · Defense AI',
+        },
+        {
+          name: 'Winter River',
+          role: 'Software Lead',
+          url: 'https://github.com/ezekielamitchell/ECE-26.1-Winter-River',
+          thumb: mkThumb('winter'),
+          desc: 'AWS-partnered modular data center simulator with distributed real-time control across ESP32 nodes, Raspberry Pi orchestration, MQTT messaging, power-flow modeling, thermal monitoring, and Grafana observability.',
+          stack: 'ESP32 · Python · C++ · MQTT · Raspberry Pi · Grafana',
+        },
+        {
+          name: 'CASEset',
+          role: 'Researcher',
+          url: 'https://github.com/ezekielamitchell/CASEset',
+          thumb: mkThumb('caseset'),
+          desc: 'Deep-learning dataset and model pipeline for context-aware webcam gaze estimation, fusing synchronized webcam frames, screenshots, and Tobii eye-tracker data for attention-modeling research.',
+          stack: 'Python · PyTorch · OpenCV · ROS2 · Transformers · Eye Tracking',
+        },
+        {
+          name: 'GUARDEN',
+          role: 'Lead Engineer',
+          url: 'https://github.com/ezekielamitchell/GUARDEN',
+          thumb: mkThumb('guarden'),
+          desc: 'Distributed IoT and edge-AI system for urban-garden rodent detection using authenticated MQTT pub/sub, embedded sensing, and TensorFlow Lite Micro inference on constrained hardware.',
+          stack: 'ESP32 · C++ · TensorFlow Lite Micro · MQTT · AWS · Edge AI',
+        },
+      ],
+      skills: [
+        { cat: 'Languages', items: ['Python', 'C++', 'Rust', 'MATLAB', 'Bash'] },
+        { cat: 'Frameworks', items: ['PyTorch', 'TensorFlow', 'OpenCV', 'ROS2', 'TF Lite Micro'] },
+        { cat: 'Embedded & IoT', items: ['ESP32 / ESP-IDF', 'Nvidia Jetson', 'Raspberry Pi', 'MQTT', 'AWS SNS'] },
+        { cat: 'Research', items: ['Computer Vision', 'Deep Learning', 'Multimodal Sync', 'Data Pipelines'] },
+      ],
+      education: [
+        {
+          school: 'Seattle University',
+          place: 'Seattle, WA',
+          dates: 'Expected Dec. 2026',
+          degree: 'B.S. Computer Engineering',
+          detail: 'Minor: Robotics, Chinese',
+        },
+        {
+          school: 'University of Washington',
+          place: 'Seattle, WA · Honors',
+          dates: 'Jun. 2023',
+          degree: 'Finance & Chinese',
+          detail: 'Transferred',
+        },
+        {
+          school: 'Bellevue College',
+          place: 'Bellevue, WA · Honors',
+          dates: 'Jan. 2022',
+          degree: 'Associate in Arts & Sciences, AAS-DTA',
+          detail: '',
+        },
+      ],
+    };
+  }
+}
 </script>
 </body>
 </html>
